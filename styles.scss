@@ -289,4 +289,26 @@ body{
     }
 }
 
-//STYLES FOR NAVBAR 
+//STYLES FOR NAVBAR LINKS//
+.navBar__linksBtn{
+    flex-direction: column;
+    gap:0;
+    width:95%;
+border-top: solid 1px transparentize($color: $color-mainGrdnd-end, $amount: 0.8);
+margin-top: 20px;
+.link_btn_item{
+
+    &:first-child{
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+
+    &:last-child{
+        color: $color-text-main-White;
+        background: linear-gradient(to right, $color-headGrdnd-start, $color-headGrdnd-end);
+    }
+}
+
+}
