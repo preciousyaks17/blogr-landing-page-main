@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap");
+ 
+// # Front-end Style Guide
+// ========================
+
+// ## Layout
+// The designs were created to the following widths:
+// - Mobile: 375px
+// - Desktop: 1440px
+// ========================
+
+// ## Colors
+// ### Primary
+$color-link-btn-red: hsl(356, 100%, 66%); // Light red (CTA text)
+$color-link-btn-hover: hsl(355, 100%, 74%); // Very light red (CTA hover background)
+$color-text-header: hsl(208, 49%, 24%); // Very dark blue (headings)
+
+// ### Neutral
+$color-text-main-White: hsl(0, 0%, 100%); // (text)
+$color-text-footer: hsl(240, 2%, 79%); // Grayish blue (footer text)
+$color-section-bg: hsl(207, 13%, 34%); // Very dark grayish blue (body copy)
+$color-footer-bg: hsl(240, 10%, 16%); // Very dark black blue (footer background)
+
+// ### Gradient
+// Background gradient - Intro/CTA mobile nav:
+$color-headGrdnd-start: hsl(13, 100%, 72%); // Very light red
+$color-headGrdnd-end: hsl(353, 100%, 62%); // Light red
+
+// Background gradient - body:
+$color-mainGrdnd-start: hsl(237, 17%, 21%); // Very dark gray blue
+$color-mainGrdnd-end: hsl(237, 23%, 32%); // Very dark desaturated blue
+
+$font-Overpass: "Overpass", sans-serif; //body, description
+$font-Ubuntu: "Ubuntu", sans-serif; //menu, header
+
+// ### Fonts
+// ========================
+// - Family: [Overpass](https://fonts.google.com/specimen/Overpass?preview.text_type=custom)
+// - Weights: 300, 600
+$font-Overpass-w300: 300;
+$font-Overpass-w600: 600;
+// - Family: [Ubuntu](https://fonts.google.com/specimen/Ubuntu?preview.text_type=custom)
+// - Weights: 400, 500, 700
+$font-Ubuntu-w400: 400;
+$font-Ubuntu-w500: 500;
+$font-Ubuntu-w700: 700;
+
+// ### variables
+// ========================
+$main-container-width: 1440px;
+$content-container-width: 1140px;
+
+
+
+
+
+//MAIN STYLE//
+body{
+    width: 100%;
+    font-family: $font-Overpass;
+    font-weight: $font-Overpass-w300;
+    
+    line-height: 1.5;
+    letter-spacing: 0.07rem;
+
+    h1,
+    h2,
+    h3{
+        font-weight: $font-Overpass-w600;
+        color: $color-text-header;
+    }
+     h4,
+    a,
+    
+    li,
+    *-item{
+        font-family: $font-Ubuntu;
+        font-weight: $font-Ubuntu-w700;
+        color: $color-text-header;
+        text-decoration: none;
+        list-style-type: none;
+        ;
+    }
+    a:hover{
+        text-decoration: underline;
+    }
+
+    //MEDIA QUERIES FOR MIN-SCREEN 375px//
+    @media (max-width:375px){
+        &::before{
+            content:"";
+            color: red;
+            font-size: 5rem;
+            line-height: 1.5;
+        }
+    }
+}
+.container{
+    max-width: $main-container-width;
+    margin: 0 auto;
+
+    @media(max-width:374px){
+        display: none;
+    }
+    .container__content{
+        max-width: $content-container-width;
+        margin: 0 auto;
+    }
+}
+
+//HEADER//
+.header{
+     width: 100%;
+     height: auto;
+        background: linear-gradient(to right top, $color-headGrdnd-start, $color-headGrdnd-end);
+        border-radius: 0 0 0 100px;
+        overflow: hidden;
+}
+.header-cover{
+    padding: 0 20px;
+
+    &bg{
+        width:100%;
+        height: 100%;
+        background-image: url(./images/bg-pattern-intro-mobile.svg);
+   background-position-x:35% ;
+   background-position-y:35% ;
+
+   @media(min-width:1200px){
+    background-image: url(./images/bg-pattern-intro-desktop.svg);
+    background-position-x:25% ;
+    background-position-y:center;
+   }
+    }
+}
+
+//STYLES FOR LINK BUTTONS//
+.link_buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+
+    .link_btn_item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 135px *1.15;
+        height:50px;
+        border-radius: 25px;
+        text-decoration: none;
+
+        @media(min-width:992px){
+            width:135px;
+        }
+    }
+}
+
+//STYLES FOR NAVIGATION//
+.header__navBar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100px;
+    gap: 20px;
+}
+
+.container__navBar{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    left: 0;
+    padding: 0 20px;
+    overflow: auto;
+
+
+    @media (min-width:922px){
+        position: relative;
+        
+        height: auto;
+        top: 0;
+        left: 0;
+        padding: 0;
+        overflow: inherit;
+    }
+    &-active{
+        top:100px;
+        position: fixed;
+    }
+}
+
+.container__navBar_cover{
+    width: 100%;
+     border-radius: 10px;
+     display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        background-color: #fff;
+        box-shadow: 0 10px 20px $color-section-bg ;
+        padding-bottom: 20px;
+
+
+        @media (min-width:922px){
+            flex-direction: row;
+            justify-content: space-between;
+ background-color: inherit;
+            padding: 0;
+            box-shadow: none;
+            
+        }
+}
+
+//STYLES FOR MENU BAR//
+.NavBar__menu{
+    display:flex;
+    gap: 20px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+
+    @media (min-width:922px){
+        flex-direction:row;
+        width: auto;
+    }
+}
+
+.narBar__menu_item{
+    position: relative;
+
+    h4{
+        &::after{
+            display: inline-block;
+            content:url(./images/icon-arrow-dark.svg);
+      margin-left:20px - 15px ;
+        }
+
+        &::hover {
+            text-decoration: underline;
+            cursor: pointer;
+
+            &::after{
+                transform: rotate(-90deg);
+            }
+        }
+
+
+        @media (min-width:922px){
+            color: hsl(0, 0%, 100%);
+
+            &::after{
+                content: url(./images/icon-arrow-light.svg);
+            }
+
+            &:hover{
+                color:hsl(0, 0%, 100%) ;
+            }
+        }
+    }
+}
+
+
+//STYLES FOR MENU DROPDOWN//
+.menu_item_dropdown{
+    position: relative;
+    padding-top: 20px;
+
+    @media (min-width:922px){
+        position: absolute;
+    }
+}
+
+.item_dropdown_cover{
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: transparentize($color: $color-mainGrdnd-end, $amount: 0.8);
+
+    li{
+        margin-top: 20px;
+    }
+
+    @media (min-width:922px){
+        background-color: #fff;
+        padding-right: 20px * 2;
+        box-shadow: 0 5px 5px 5px transparentize($color: $color-section-bg, $amount: 0.8);
+    }
+}
+
+//STYLES FOR NAVBAR 

@@ -6,7 +6,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css"/>
+  <link rel="stylesheet" href="./styles.css"/>
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Blogr]</title>
@@ -18,59 +18,99 @@
   </style>
 </head>
 <body>
-  <header>
- 
-<nav>
-  <div class="logo-container">
-    <a href="#"><img class="logo" src="./images/logo.svg"/></a>
-  </div>
-<ul>
+  <header class="container header" id="top">
+		<div class="header-cover header-cover-bg">
+			<div class="container__content">
 
-  <div class="product-container">
-<li><a href="#">Product</a> </li>
-  </div>
+				<div class="header__navBar " id="headerNavbar">
 
+					<!-- logo -->
+					<div class="navBar__logo">
+						<a href="#top">
+							<img src="images/logo.svg" alt="logo image">
+						</a>
+					</div>
 
-  <!--Overview
-  Pricing
-  Marketplace
-  Features
-  Integrations-->
+					<!-- Bar menu -->
+					<div class="container__navBar" id="navbarMenu">
+						<div class="container__navBar_cover">
+							<!-- menu -->
+							<ul class="navBar__menu">
 
-<div class="company-container">
-  <li><a href="#">Company</a> </li>
-</div>
-  
+								<li class="navBar__menu_item">
+									<h4>Product</h4>
+									<div class="menu_item_dropdown hidden_item">
+										<ul class="item_dropdoun_cover">
+											<li><a href="">Overview</a></li>
+											<li><a href="">Pricing</a></li>
+											<li><a href="">Marketplace</a></li>
+											<li><a href="">Features</a></li>
+											<li><a href="">Integrations</a></li>
+										</ul>
+									</div>
+								</li>
 
- <!-- About
-  Team
-  Blog
-  Careers-->
-  <div>
-    <li><a href="#">Connect</a> </li>
-  </div>
-  
-  
- <!-- Contact
-  Newsletter
-  LinkedIn-->
-  <li><a href="#">Login</a></li>
-  
-  <li><a href="#" >Sign Up</a></li>
-  
-</ul>
-</nav>
- <h1>A modern publishing platform</h1>  
-  <p>Grow your audience and build your online brand</p> 
-  <div class="btn-container">
-    <button class="btn-start">
-      Start for Free
-    </button>
-    <button class="btn-learn">Learn More</button>
-  </div>
-   
-</header>
-  
+								<li class="navBar__menu_item">
+									<h4>Company</h4>
+									<div class="menu_item_dropdown hidden_item">
+										<ul class="item_dropdoun_cover">
+											<li><a href="">About</a></li>
+											<li><a href="">Team</a></li>
+											<li><a href="">Blog</a></li>
+											<li><a href="">Careers</a></li>
+										</ul>
+									</div>
+
+								</li>
+
+								<li class="navBar__menu_item">
+									<h4>Connect</h4>
+									<div class="menu_item_dropdown hidden_item">
+										<ul class="item_dropdoun_cover">
+											<li><a href="">Contact</a></li>
+											<li><a href="">Newsletter</a></li>
+											<li><a href="">LinkedIn</a></li>
+										</ul>
+									</div>
+
+								</li>
+							</ul>
+
+							<!-- links -->
+							<div class="navBar__linksBtn link_buttons">
+								<a class="link_btn_item" href="">Login</a>
+								<a class="link_btn_item" href="">Sign Up</a>
+							</div>
+						</div>
+
+					</div>
+
+					<!-- Burger button -->
+					<button class="btn_burger " id="btnBurger" aria-label="humburger">
+					</button>
+
+				</div>
+
+				<!-- main header content -->
+				<div class="header__content">
+					<div class="header__title">
+						<h1>A modern publishing platform</h1>
+					</div>
+
+					<div class="header__description">
+						<p>Grow your audience and build your online brand</p>
+					</div>
+
+					<div class="header__linksBtn link_buttons">
+						<a class="link_btn_item" href="">Start for Free</a>
+						<a class="link_btn_item" href="">Learn More</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</header>
+
 Designed for the future
 
   Introducing an extensible editor
