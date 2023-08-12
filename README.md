@@ -1,5 +1,7 @@
 #  Blogr landing page
 
+# Github Page Link: https://preciousyaks17.github.io/blogr-landing-page-main/
+
 ![Design preview for the Blogr landing page coding challenge](./design/desktop-preview.jpg)
 
 ## Welcome! 👋
