@@ -15,10 +15,10 @@ document.addEventListener('scroll', function (event) {
 // =======================
 // # menu - show drop-doun menu
 const MenuItem = document.querySelectorAll(".navBar__menu_item"); //menu btn on click
-const DropDounItems = document.querySelectorAll(".menu_item_dropdown"); //hidden items 
+const DropDownItems = document.querySelectorAll(".menu_item_dropdown"); //hidden items 
 
 function hideMenu() {
-    DropDounItems.forEach(function (item) {
+    DropDownItems.forEach(function (item) {
         item.classList.add('hidden_item');
     })
 }
