@@ -149,6 +149,7 @@ body{
         height:50px;
         border-radius: 25px;
         text-decoration: none;
+        color: #fff;
 
         @media(min-width:992px){
             width:135px;
@@ -213,7 +214,7 @@ body{
 }
 
 //STYLES FOR MENU BAR//
-.NavBar__menu{
+.navBar__menu{
     display:flex;
     gap: 20px;
     width: 100%;
@@ -221,51 +222,61 @@ body{
     justify-content: center;
     padding: 20px;
 
+
     @media (min-width:922px){
         flex-direction:row;
         width: auto;
     }
-}
 
-.narBar__menu_item{
-    position: relative;
+    &_item {
+        position: relative;
 
-    h4{
-        &::after{
-            display: inline-block;
-            content:url(./images/icon-arrow-dark.svg);
-      margin-left:20px - 15px ;
-        }
-
-        &::hover {
-            text-decoration: underline;
-            cursor: pointer;
-
+        h4{
             &::after{
-                transform: rotate(-90deg);
+                display: inline-block;
+                content:url(./images/icon-arrow-dark.svg);
+          margin-left:20px - 15px ;
             }
-        }
+    
+            &:hover {
+                text-decoration: underline;
+                ;
 
-
-        @media (min-width:922px){
-            color: hsl(0, 0%, 100%);
-
-            &::after{
-                content: url(./images/icon-arrow-light.svg);
+                cursor: pointer;
+    
+                &::after{
+                    transform: rotate(-90deg);
+                }
             }
-
-            &:hover{
-                color:hsl(0, 0%, 100%) ;
+    
+    
+            @media (min-width:922px){
+                color: hsl(0, 0%, 100%);
+    
+                &::after{
+                    content: url(./images/icon-arrow-light.svg);
+                }
+    
+                &:hover{
+                    color:hsl(0, 0%, 100%) ;
+                }
             }
         }
     }
+
 }
+
+
 
 
 //STYLES FOR MENU DROPDOWN//
 .menu_item_dropdown{
     position: relative;
     padding-top: 20px;
+
+    /*&:hover{
+        color: #fff;
+    }*/
 
     @media (min-width:922px){
         position: absolute;
@@ -278,14 +289,28 @@ body{
     border-radius: 5px;
     background-color: transparentize($color: $color-mainGrdnd-end, $amount: 0.8);
 
+    &:hover{
+        color: #fff;
+    }
+
     li{
         margin-top: 20px;
+        
     }
 
     @media (min-width:922px){
         background-color: #fff;
         padding-right: 20px * 2;
         box-shadow: 0 5px 5px 5px transparentize($color: $color-section-bg, $amount: 0.8);
+        color: $color-section-bg;
+
+        li {
+            a:hover {
+                color: $color-footer-bg;
+            }
+        }
+        
+        
     }
 }
 
@@ -366,6 +391,7 @@ margin-top: 20px;
 //STYLE FOR MENU ITEM DROPDOWN HIDDEN_ITEM//
 .hidden_item{
     display: none;
+    
 }
 
 .btn_burger{
@@ -377,6 +403,7 @@ margin-top: 20px;
     background-size: contain;
     background-repeat: no-repeat;
     background-color: inherit;
+    border: none;
 
     &-active{
         background: url(./images/icon-close.svg);
@@ -390,7 +417,7 @@ margin-top: 20px;
 //STYLES FOR HEADERNAVBAR//
 
 @media (min-width: 768px){
-    .scroll-top{
+    .scroll_view{
         position: fixed;
         top: 0;
         left: 0;
@@ -503,8 +530,7 @@ main.container{
 
 
     @media(min-width:922px){
-        position: absolute;
-        top: 135px;
+        
     }
 }
 
@@ -515,24 +541,27 @@ main.container{
     align-items: center;
     gap: 20px;
     text-align: center;
+    ;
 
 
     @media(min-width:922px){
-        flex-direction:row;
+        flex-direction:row-reverse;
         justify-content: center;
         text-align: left;
-
+padding-left: 7%;
     }
 }
 
 
 .section_column{
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
 
 
     @media(min-width:922px){
         width: 50%;
+        position: relative;
+        
     }
 }
 
@@ -553,6 +582,9 @@ main.container{
 
     .item__image_mobile{
         display:block;
+        position: relative;
+        left: 80%;
+        
     }
     .item__image_desktop{
         display: none;
@@ -564,10 +596,11 @@ main.container{
 
     @media(min-width:922px){
         .item__image_mobile{
-            display: none;
+            display: block;
+            
         }
         .item__image_desktop{
-            display: block;
+            display:  block;
         }
     }
 }
@@ -669,12 +702,14 @@ main.container{
 
 			@media (min-width:1200px) {
 				width: 280px;
+                text-align: center;
 			}
 
 			.navBar_item-title {
 				h4 {
 					color: $color-text-main-White;
 					margin-bottom: 20px* 2;
+                    text-align: center;
 				}
 			}
 
